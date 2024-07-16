@@ -72,3 +72,5 @@ And lastly...
 
 ## `clean(files)`
 We clean all the files so that we can do it all over again.
+
+**You can find the official video here: https://www.youtube.com/watch?v=3CdIAIDSi5U**
