@@ -55,7 +55,7 @@ Then we upload to Beatstars using a Selenium script in the `beatstars(wav, stems
 ## `thumbnail(img)`
 Alright, you have your thumbnail, but it's 1:1 aspect ratio, which is is fine for Beatstars who require square thumbnails, but for YouTube we need aspect ratio of 16:9. This function works by finding the most dominant color in the returned image and creating a backdrop (with the correct aspect ratio) that matches the returned image, while also adding a border and some filters to the square image itself that is superimposed over the backdrop. Sounds complicated, but is actually very simple.
 
-Now we have to...
+Now we have:
 
 ![thumb](https://github.com/user-attachments/assets/1a53b7e6-6381-4ae8-9a20-ce7daa807fb6)
 
