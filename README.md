@@ -49,13 +49,26 @@ Also, this image was not the one actually returned from the query, but documenta
 
 Note: the image returned can have an aspect ratio but the function cuts it into a 1:1 square. This is the image that you are displayed with so there isn't any fear that after cropping, you won't like the image. 
 
-## thumbnail(img`
-Alright, you have your thumbnail, but it's 1:1 which is is fine for Beatstars which has square thumbnails, but for YouTube we need 16:9 aspect ratio.
+## `beatstars(wav, stems, sq)`
+Then we upload to Beatstars using a Selenium script in the `beatstars(wav, stems, sq)` function. The function isn't totally done, some of the uploading process still needs to be done manually, but if you're only interested in uploading to YouTube...?
 
-`thumbnail(img)` is responsible for making the thumbnail for YouTube. It works by finding dominant colors in the returned image and creating a backdrop that matches the returned image, while also adding a border and some filters to the image. 
+## `thumbnail(img)`
+Alright, you have your thumbnail, but it's 1:1 aspect ratio, which is is fine for Beatstars who require square thumbnails, but for YouTube we need aspect ratio of 16:9. This function works by finding the most dominant color in the returned image and creating a backdrop (with the correct aspect ratio) that matches the returned image, while also adding a border and some filters to the square image itself that is superimposed over the backdrop. Sounds complicated, but is actually very simple.
 
-Then we upload to Beatstars using a Selenium script in `beatstars(wav, stems, sq)`.
+Now we have to...
 
-After that 
+![thumb](https://github.com/user-attachments/assets/1a53b7e6-6381-4ae8-9a20-ce7daa807fb6)
 
+## `make_video(wav, thumb)`
+This function creates an `.mp4` with the thumbnail as a background for as long as the beat is.
 
+## `add_audio(wav, video)`
+Then we add the audio.
+
+## `youtube(wav, beat, thumb)`
+Then we access YouTube's API to upload the entire video to whatever YouTube channel you want (remember you will need an API key).
+
+And lastly...
+
+## `clean(files)`
+We clean all the files so that we can do it all over again.
